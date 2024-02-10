@@ -23,6 +23,7 @@ export default function UserCard({ user }) {
     isLink = (
       <Link
         to={`/user-detail/${user.id}`}
+        state={user}
         className="flex w-full items-center px-3 py-3 bg-[#191D26] border-[rgba(206,206,206,0.12)] border-l border-r hover:bg-emerald-500 duration-200 cursor-pointer"
       >
         <h1 className="mx-3 text-white font-semibold text-lg capitalize">
@@ -35,13 +36,13 @@ export default function UserCard({ user }) {
   return (
     <div className="rounded bg-white text-slate-500 flex-1">
       <figure className="p-6">
-        <span className="relative inline-flex h-22 w-22 items-center justify-center rounded-full text-white shadow-md border">
+        <span className="relative inline-flex h-[90px] w-[90px] items-center justify-center rounded-full text-white shadow-md border">
           <img
             src={image}
             alt={fullName}
             width="90"
             height="90"
-            className="max-w-full rounded-full"
+            className="w-full h-full rounded-full object-cover"
           />
         </span>
       </figure>

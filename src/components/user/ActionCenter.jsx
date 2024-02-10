@@ -1,4 +1,5 @@
 import { CiSearch } from "react-icons/ci";
+import { FaChevronDown } from "react-icons/fa6";
 
 export default function ActionCenter({
   searchTerm,
@@ -33,19 +34,24 @@ export default function ActionCenter({
         >
           Add User
         </button>
-        <div className="w-full">
-          <select
-            className="cursor-pointer rounded-md border py-2 text-center bg-gray-800 border-none text-white outline-none w-full"
-            name="sortBy"
-            id="sortBy"
-            defaultValue=""
-            onChange={(e) => onSort(e.target.value)}
-          >
-            <option value="">Sort By</option>
-            <option value="name_asc">Name (A-Z)</option>
-            <option value="email_asc">Email (A-Z)</option>
-            <option value="company_asc">Company (A-Z)</option>
-          </select>
+        <div className="w-full flex justify-center items-center bg-gray-800 rounded-md">
+          <div>
+            <select
+              className="cursor-pointer border py-2 text-center  border-none bg-transparent outline-none w-full appearance-none"
+              name="sortBy"
+              id="sortBy"
+              defaultValue=""
+              onChange={(e) => onSort(e.target.value)}
+            >
+              <option value="">Sort By</option>
+              <option value="name_asc">Name (A-Z)</option>
+              <option value="email_asc">Email (A-Z)</option>
+              <option value="company_asc">Company (A-Z)</option>
+            </select>
+          </div>
+          <div className="pr-2">
+            <FaChevronDown size={12} />
+          </div>
         </div>
       </div>
     </div>
