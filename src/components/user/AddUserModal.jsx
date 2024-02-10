@@ -103,7 +103,7 @@ export default function AddUserModal({ onAddUser, onClose }) {
             <input
               className="outline-none block w-full rounded-md bg-[#2D323F] px-3 py-2.5"
               type="text"
-              name="company"
+              name="company.name"
               id="company"
               placeholder="XYZ"
               value={user.company.name}
@@ -117,7 +117,7 @@ export default function AddUserModal({ onAddUser, onClose }) {
               <input
                 className="outline-none block w-full rounded-md bg-[#2D323F] px-3 py-2.5"
                 type="text"
-                name="address"
+                name="address.address"
                 id="address"
                 placeholder="6463 Demo Street"
                 value={user.address.address}
@@ -130,7 +130,7 @@ export default function AddUserModal({ onAddUser, onClose }) {
               <input
                 className="outline-none block w-full rounded-md bg-[#2D323F] px-3 py-2.5"
                 type="text"
-                name="city"
+                name="address.city"
                 id="city"
                 placeholder="Valley Drive"
                 value={user.address.city}
@@ -143,7 +143,7 @@ export default function AddUserModal({ onAddUser, onClose }) {
               <input
                 className="outline-none block w-full rounded-md bg-[#2D323F] px-3 py-2.5"
                 type="text"
-                name="state"
+                name="address.state"
                 id="state"
                 placeholder="AL"
                 value={user.address.state}
