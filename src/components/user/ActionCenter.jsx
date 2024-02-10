@@ -1,8 +1,13 @@
 import { CiSearch } from "react-icons/ci";
 
-export default function ActionCenter({ searchTerm, onSearch }) {
+export default function ActionCenter({
+  searchTerm,
+  onSearch,
+  onSort,
+  onOpenModal,
+}) {
   return (
-    <div className="flex justify-between gap-4">
+    <div className="flex flex-col md:flex-row justify-between gap-4">
       <div className="relative overflow-hidden rounded-lg text-gray-50 md:min-w-[380px] lg:min-w-[440px]">
         <input
           type="search"
@@ -21,19 +26,27 @@ export default function ActionCenter({ searchTerm, onSearch }) {
         </button>
       </div>
 
-      <div className="flex">
-        <select
-          className="cursor-pointer rounded-md border py-2 text-center bg-gray-800 border-none text-white outline-none"
-          name="sortBy"
-          id="sortBy"
-          // onChange={(e) => onSort(e.target.value)}
+      <div className="flex md:max-w-[350px] gap-2 w-full rounded-lg">
+        <button
+          className="rounded-md bg-blue-500 hover:bg-blue-600 duration-200 px-3.5 py-2.5 text-sm font-semibold w-full"
+          onClick={onOpenModal}
         >
-          <option value="">Sort</option>
-          <option value="name_asc">Name (A-Z)</option>
-          <option value="name_desc">Name (Z-A)</option>
-          <option value="year_asc">Publication Year (Oldest)</option>
-          <option value="year_desc">Publication Year (Newest)</option>
-        </select>
+          Add User
+        </button>
+        <div className="w-full">
+          <select
+            className="cursor-pointer rounded-md border py-2 text-center bg-gray-800 border-none text-white outline-none w-full"
+            name="sortBy"
+            id="sortBy"
+            defaultValue=""
+            onChange={(e) => onSort(e.target.value)}
+          >
+            <option value="">Sort By</option>
+            <option value="name_asc">Name (A-Z)</option>
+            <option value="email_asc">Email (A-Z)</option>
+            <option value="company_asc">Company (A-Z)</option>
+          </select>
+        </div>
       </div>
     </div>
   );

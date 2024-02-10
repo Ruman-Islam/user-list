@@ -14,7 +14,9 @@ export default function UserCard({ user }) {
   if (pathname.includes("user-detail")) {
     isLink = (
       <div className="flex w-full items-center px-3 py-3 bg-[#191D26] border-[rgba(206,206,206,0.12)] border-l border-r ">
-        <h1 className="mx-3 text-white font-semibold text-lg">{fullName}</h1>
+        <h1 className="mx-3 text-white font-semibold text-lg capitalize">
+          {fullName}
+        </h1>
       </div>
     );
   } else {
@@ -23,7 +25,9 @@ export default function UserCard({ user }) {
         to={`/user-detail/${user.id}`}
         className="flex w-full items-center px-3 py-3 bg-[#191D26] border-[rgba(206,206,206,0.12)] border-l border-r hover:bg-emerald-500 duration-200 cursor-pointer"
       >
-        <h1 className="mx-3 text-white font-semibold text-lg">{fullName}</h1>
+        <h1 className="mx-3 text-white font-semibold text-lg capitalize">
+          {fullName}
+        </h1>
       </Link>
     );
   }
